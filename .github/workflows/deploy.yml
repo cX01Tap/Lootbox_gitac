@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: phanuruj-1650703554-final
+          app-name: lootbox-gitac                 
           slot-name: production
-          images: cx00tap/lootbox:latest
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          images: cx00tap/lootbox:latest
