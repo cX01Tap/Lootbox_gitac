@@ -24,16 +24,20 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t your-dockerhub-username/your-image-name:latest .
+          docker build -t cx00tap/lootbox:latest .
 
       - name: Push Docker image
         run: |
-          docker push your-dockerhub-username/your-image-name:latest
+          docker push cx00tap/lootbox:latest
+
+      - name: Pull Docker image from repo
+        run: |
+          docker pull cx00tap/lootbox:latest
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: your-app-name
+          app-name: phanuruj-1650703554-final
           slot-name: production
-          images: your-dockerhub-username/your-image-name:latest
+          images: cx00tap/lootbox:latest
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
